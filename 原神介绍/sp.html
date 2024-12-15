@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>原神歌曲视频</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./bj/bj5.png'); /* 添加背景图片 */
+    background-size: cover; /* 背景图片覆盖整个页面 */
+    background-position: center; /* 背景图片居中 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 使页面高度为视口高度 */
+  }
+
+  #videoContainer {
+    text-align: center; /* 使按钮居中 */
+  }
+
+  #myVideo {
+    width: 640px; /* 设置视频宽度 */
+    height: 360px; /* 设置视频高度 */
+  }
+
+  #fullscreenBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="videoContainer">
+    <a href="index.html">返回首页</a>
+  <video id="myVideo" controls>
+    <source src="./sp/sp.mp4" type="video/mp4">
+    您的浏览器不支持HTML5视频。
+  </video>
+  <button id="fullscreenBtn">全屏播放</button>
+</div>
+<script>
+document.getElementById('fullscreenBtn').addEventListener('click', function() {
+  var video = document.getElementById('myVideo');
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.mozRequestFullScreen) { /* Firefox */
+    video.mozRequestFullScreen();
+  } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { /* IE/Edge */
+    video.msRequestFullscreen();
+  }
+});
+</script>
+</body>
+</html>
