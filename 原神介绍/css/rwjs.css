@@ -1,0 +1,51 @@
+body {
+    background-image: url('../bj/R-C.jpg');
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 防止图片失真，裁剪多余部分 */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-block {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.intro-content {
+    padding: 20px;
+    background-color: #ffffff52;
+}
+
+.intro-content h2 {
+    margin-top: 0;
+}
+
+.intro-image {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.intro-image:hover {
+    transform: scale(1.05);
+}
+
+/* 可选：为视频添加一些样式 */
+video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}

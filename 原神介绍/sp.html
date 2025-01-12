@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>原神歌曲视频</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./bj/bj5.png'); /* 添加背景图片 */
+    background-size: cover; /* 背景图片覆盖整个页面 */
+    background-position: center; /* 背景图片居中 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 使页面高度为视口高度 */
+  }
+
+  #videoContainer {
+    text-align: center; /* 使按钮居中 */
+  }
+
+  #myVideo {
+    width: 640px; /* 设置视频宽度 */
+    height: 360px; /* 设置视频高度 */
+  }
+
+  #fullscreenBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="videoContainer">
+    <a href="index.html">返回首页</a> 
+  <video id="myVideo" controls>
+    <!-- 酷狗音乐：https://mvwebfs.kugou.com/202501122041/3523ad620a59fc584fa40d94f723ac5c/v2/17ba91d8d69369baa0f46a1b795a179d/G295/M0B/74/EF/B5UEAGVovC-AEVITBvlwD4zzbfo9327864 -->
+    <!-- 网易云：https://vodkgeyttp8.vod.126.net/cloudmusic/obj/core/7302956935/d99a79add5291480bb685aacadb4f27e.mp4?wsSecret=d4cd1f38311998f1551ac522457e5aff&wsTime=1736685431 -->
+    <!-- QQ音乐：https://mv6.music.tc.qq.com/EB4B710BC6F451E206BEA4F39AD7B41EDAB8992058C203AE77ECDD5F041EEFDEE9C7A2068E6D1F501163FE66CF9DC43FZZqqmusic_default__v21518232e/qmmv_0b53jyaaaaaa7uaa3fl6avrvitqaabhaaaca.f9944.ts -->
+    <source src="https://mvwebfs.kugou.com/202501122041/3523ad620a59fc584fa40d94f723ac5c/v2/17ba91d8d69369baa0f46a1b795a179d/G295/M0B/74/EF/B5UEAGVovC-AEVITBvlwD4zzbfo9327864" type="video/mp4">
+    您的浏览器不支持HTML5视频。
+  </video>
+  <button id="fullscreenBtn">全屏播放</button>
+</div>
+<script>
+document.getElementById('fullscreenBtn').addEventListener('click', function() {
+  var video = document.getElementById('myVideo');
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.mozRequestFullScreen) { /* Firefox */
+    video.mozRequestFullScreen();
+  } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { /* IE/Edge */
+    video.msRequestFullscreen();
+  }
+});
+</script>
+</body>
+</html>

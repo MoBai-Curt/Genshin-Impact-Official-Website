@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原神启动</title>
+<style>
+.container {
+    background-color: aqua; /* 背景颜色 */
+    background-image: url('./bj/bj5.png'); /* 替换为你的图片路径 */
+    background-size: cover; /* 使背景图片覆盖整个容器 */
+    background-position: center; /* 居中背景图片 */
+    background-repeat: no-repeat; /* 防止背景图片重复 */
+    height: 1000px; /* 容器高度 */
+}
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        opacity: 0;
+        z-index: 1;
+        visibility: hidden;
+        transition: opacity 3s ease-in-out;
+    }
+    .image {
+        width: 420px;
+        position: fixed;
+        top: 22%;
+        left: 36%;
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+    }
+    .mybtn {
+        font-size: 18px;
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+<body>
+<div>
+    <div class="container">
+        <!-- 为了使效果更清晰在外面加的容器 -->
+        <button class="mybtn" onclick="startAnimation()">原神启动</button>
+        <div class="overlay"></div>
+        <img class="image" src="./svg/yuanshen.svg">
+    </div>
+</div>
+<script>
+async function startAnimation() {
+    const overlay = document.querySelector(".overlay");
+    const myimage = document.querySelector(".image");
+
+    // 显示覆盖层和图片
+    overlay.style.visibility = 'visible';
+    myimage.style.visibility = 'visible';
+    // 假设你想要覆盖层有一个渐显效果，设置opacity从0到1
+    overlay.style.opacity = 1;
+    // 可以给图片也设置一个延迟显示的效果，比如通过CSS动画或JS
+
+    // 等待一段时间让覆盖层渐显（这里假设是3秒）
+    await new Promise(resolve => setTimeout(resolve, 3000));
+
+    // 显示图片（如果图片之前没显示，现在显示它）
+    myimage.style.opacity = 1;
+
+    // 等待图片显示一段时间（这里假设是2秒）
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // 隐藏覆盖层和图片
+    overlay.style.opacity = 0;
+    myimage.style.opacity = 0;
+
+    // 等待覆盖层和图片渐隐（这里假设是2秒）
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // 完全隐藏覆盖层和图片，并跳转到另一个页面
+    overlay.style.visibility = 'hidden';
+    myimage.style.visibility = 'hidden';
+
+    // 跳转到sp.html页面
+    window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

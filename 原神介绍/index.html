@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神 - 提瓦特之旅</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <style>
+        /* 这里的样式只是为了示例，您可以根据需要自定义 */
+        .video-container {
+            display: none; /* 初始隐藏视频容器 */
+            width: 640px;
+            height: 360px;
+            margin: 20px auto;
+        }
+        .play-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="homenav">
+        <div class="navtitle"><strong>欢迎来到</strong>|提瓦特大陆</div>
+        <a href="index.html">主页</a>
+        <a href="yxbj.html">游戏·背景</a>
+        <a href="yxtes.html">游戏·特色</a>
+        <a href="sp.html">游戏·歌曲视频</a>
+        <a href="rwjs.html">游戏·人物</a>
+        <div class="navanim home"></div>
+        <div class="none"></div>
+    </nav>
+    <header>
+        <div class="header-content">
+            <h1>原神</h1>
+            <p>提瓦特之旅，从此开始</p>
+            <a href="#" class="play-video-btn" id="playButton">播放视频</a>
+            <!-- 视频容器 -->
+            <div class="video-container" id="videoContainer">
+            <video id="myVideo" width="640" height="360" controls>
+                <source src="https://webstatic.mihoyo.com/upload/op-public/2020/09/27/fd431739ff26ceeb3010ac561d68446b_345688670889091949.mp4" type="video/mp4">
+        </div>
+    </header>
+    <script>
+        // 获取按钮和视频容器的引用
+        var playButton = document.getElementById('playButton');
+        var videoContainer = document.getElementById('videoContainer');
+
+        // 添加点击事件监听器
+        playButton.addEventListener('click', function(event) {
+            // 阻止链接的默认行为（即导航到新页面）
+            event.preventDefault();
+
+            // 显示视频容器
+            videoContainer.style.display = 'block';
+
+            // 播放视频
+            var video = document.getElementById('myVideo');
+            video.play();
+        });
+    </script>
+
+     <main>
+        <section class="introduction">
+            <h2>游戏介绍</h2>
+            <p>《原神》是由上海米哈游网络科技股份有限公司制作发行的一款开放世界冒险游戏‌‌。游戏发生在一个被称作“提瓦特大陆”的幻想世界，玩家将扮演一位名为“旅行者”的神秘角色，在旅行中邂逅性格各异、能力独特的同伴们，并一起击败强敌、找回失散的亲人，同时逐步发掘“原神”的真相‌。
+
+                在游戏中，玩家可以自由探索提瓦特大陆，攀登山峰，穿越森林和沙漠，体验宏伟的城堡、宁静的村庄等丰富多样的场景‌。游戏融合了东方美学和西方幻想元素，画面精美且色彩丰富，为玩家呈现了一个充满奇幻色彩的世界‌。
+                
+                此外，游戏还提供了丰富的剧情和任务，以及优美的音乐陪伴玩家探索，让玩家在享受游戏乐趣的同时，也能感受到游戏背后的深厚文化底蕴‌‌。</p>
+        </section>
+
+        <section class="features">
+            <h2>游戏·图片</h2>
+            <div class="feature-item">
+                <img src="bj\tu\1599984357_292590.jpg">
+                <h3>广阔世界</h3>
+                <p>探索提瓦特大陆的每一个角落，发现隐藏的秘密。</p>
+            </div>
+            <div class="feature-item">
+                <img src="bj\tu\OIP-C.jpg">
+                <h3>丰富角色</h3>
+                <p>与众多独特角色相遇，了解他们的故事。</p>
+            </div>
+            <div class="feature-item">
+                <img src="bj\tu\111.jpg">
+                <h3>元素交互</h3>
+                <p>利用元素反应，创造无限可能。</p>
+            </div>
+        </section>
+    </main>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>2023 米哈游科技有限公司 版权所有</p>
+    </footer>
+    <div class="video-container">
+        <script src="js/spshoye.js"></script>
+    </div>
+</body>
+</html>
